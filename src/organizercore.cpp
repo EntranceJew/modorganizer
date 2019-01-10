@@ -1825,6 +1825,22 @@ void OrganizerCore::updateModActiveState(int index, bool active)
       ++enabled;
     }
   }
+  QStringList esus = dir.entryList(QStringList() << "*.esu", QDir::Files);
+  for (const QString &esu : esus) {
+    const FileEntry::Ptr file = m_DirectoryStructure->findFile(ToWString(esu));
+    if (file.get() == nullptr) {
+      qWarning("failed to activate %s", qUtf8Printable(esu));
+      continue;
+    }
+
+    if (active != m_PluginList.isEnabled(esu)
+        && file->getAlternatives().empty()) {
+      m_PluginList.blockSignals(true);
+      m_PluginList.enableESP(esu, active);
+      m_PluginList.blockSignals(false);
+      ++enabled;
+    }
+  }
   if (active && (enabled > 1)) {
     MessageDialog::showMessage(
         tr("Multiple esps/esls activated, please check that they don't conflict."),

@@ -75,7 +75,7 @@ private:
 
 
 /**
- * @brief model representing the plugins (.esp/.esm) in the current virtual data folder
+ * @brief model representing the plugins (.esp/.esm/.esu) in the current virtual data folder
  **/
 class PluginList : public QAbstractItemModel, public MOBase::IPluginList
 {

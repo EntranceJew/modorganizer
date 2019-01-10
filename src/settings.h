@@ -99,7 +99,7 @@ public:
   void addPluginSettings(const std::vector<MOBase::IPlugin*> &plugins);
 
   /**
-   * @return true if the user wants unchecked plugins (esp, esm) should be hidden from
+   * @return true if the user wants unchecked plugins (esp, esm, esu) should be hidden from
    *         the virtual dat adirectory
    **/
   bool hideUncheckedPlugins() const;

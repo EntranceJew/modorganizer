@@ -135,7 +135,7 @@ void PluginList::highlightPlugins(const QItemSelectionModel *selection, const MO
     ModInfo::Ptr selectedMod = ModInfo::getByIndex(modIndex);
     if (!selectedMod.isNull() && profile.modEnabled(modIndex)) {
       QDir dir(selectedMod->absolutePath());
-      QStringList plugins = dir.entryList(QStringList() << "*.esp" << "*.esm" << "*.esl");
+      QStringList plugins = dir.entryList(QStringList() << "*.esp" << "*.esm" << "*.esl" << "*.esu");
       MOShared::FilesOrigin origin = directoryEntry.getOriginByName(selectedMod->internalName().toStdWString());
       if (plugins.size() > 0) {
         for (auto plugin : plugins) {
@@ -197,7 +197,7 @@ void PluginList::refresh(const QString &profileName
 
     QString extension = filename.right(3).toLower();
 
-    if ((extension == "esp") || (extension == "esm") || (extension == "esl")) {
+    if ((extension == "esp") || (extension == "esm") || (extension == "esl") || (extension == "esu")) {
 
       availablePlugins.append(filename.toLower());
 

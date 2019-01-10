@@ -1049,7 +1049,7 @@ If you disable this feature, MO will only display official DLCs this way. Please
             <string>Enforces that inactive ESPs and ESMs are never loaded.</string>
            </property>
            <property name="whatsThis">
-            <string>It seems that the Games occasionally load ESP or ESM files even if they haven't been activated as plugins.
+            <string>It seems that the Games occasionally load ESP, ESM, or ESU files even if they haven't been activated as plugins.
 I don't yet know what the circumstances are, but user reports imply it is in some cases unwanted. If this is checked, ESPs and ESMs not checked in the List are invisible to the game and can not be loaded.</string>
            </property>
            <property name="text">

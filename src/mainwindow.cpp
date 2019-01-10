@@ -1597,7 +1597,8 @@ void MainWindow::updateBSAList(const QStringList &defaultArchives, const QString
   QStringList plugins = m_OrganizerCore.findFiles("", [](const QString &fileName) -> bool {
     return fileName.endsWith(".esp", Qt::CaseInsensitive)
       || fileName.endsWith(".esm", Qt::CaseInsensitive)
-      || fileName.endsWith(".esl", Qt::CaseInsensitive);
+      || fileName.endsWith(".esl", Qt::CaseInsensitive)
+      || fileName.endsWith(".esu", Qt::CaseInsensitive);
   });
 
   auto hasAssociatedPlugin = [&](const QString &bsaName) -> bool {
